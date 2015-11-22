@@ -3,17 +3,199 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="15dp"
     tools:context=".Tab3Act">
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New CheckBox"
-        android:id="@+id/checkBox" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
 
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch1" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="From:"
+            android:id="@+id/schFrom"
+            android:layout_weight="0.2"
+            android:typeface="sans"
+            android:textAlignment="center"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/schFromEnter"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:textAlignment="inherit"
+            android:typeface="sans"
+            android:text="Current Address"
+            android:padding="3dp"
+            android:textSize="15dp"
+            android:background="#0FF"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="..."
+            android:id="@+id/schFromMore"
+            android:layout_weight="0.1"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:gravity="center_vertical"
+            android:padding="1dp"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="To:"
+            android:id="@+id/schTo"
+            android:layout_weight="0.2"
+            android:typeface="sans"
+            android:textAlignment="center"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/schToEnter"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:textAlignment="inherit"
+            android:typeface="sans"
+            android:text="Hell Road"
+            android:padding="3dp"
+            android:textSize="15dp"
+            android:background="#0FF"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="..."
+            android:id="@+id/schToMore"
+            android:layout_weight="0.1"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:gravity="center_vertical"
+            android:padding="1dp"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Company:"
+            android:id="@+id/schCompany"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:layout_weight="0.3" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/schCompanySel"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center"
+            android:gravity="center_vertical"
+            android:layout_weight="0.4" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"></LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Route:"
+            android:id="@+id/schRoute"
+            android:typeface="sans"
+            android:textAlignment="center"
+            android:gravity="center_vertical"
+            android:layout_weight="0.2" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/schRouteSel"
+            android:layout_weight="0.4"
+            android:gravity="center_vertical"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="5:50 PM"
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="true"
+            android:typeface="sans"
+            android:textAlignment="center"
+            android:gravity="center_vertical" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="!"
+                android:textSize="60dp"
+                android:id="@+id/textView2"
+                android:typeface="sans"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textColor="#ff0000"
+                android:layout_weight="0.1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Accident on King St. and Taunton Rd. Intersection closed."
+                android:id="@+id/textView3"
+                android:textAlignment="center"
+                android:typeface="sans"
+                android:layout_weight="0.9"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+    </RelativeLayout>
+
 </LinearLayout>
