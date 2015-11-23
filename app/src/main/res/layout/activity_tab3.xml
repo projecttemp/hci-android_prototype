@@ -73,7 +73,7 @@
             android:gravity="center_vertical"
             android:textAlignment="inherit"
             android:typeface="sans"
-            android:text="Hell Road"
+            android:text="King Road"
             android:padding="3dp"
             android:textSize="15dp"
             android:background="#0FF"/>
@@ -112,17 +112,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:id="@+id/schCompanySel"
-            android:background="@android:drawable/btn_dropdown"
+            android:background="@android:drawable/arrow_down_float"
             android:spinnerMode="dropdown"
             android:textAlignment="center"
             android:gravity="center_vertical"
-            android:layout_weight="0.4" />
+            android:layout_weight="0.25" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"></LinearLayout>
+            android:layout_weight="0.5"></LinearLayout>
 
         <TextView
             android:layout_width="0dp"
@@ -139,9 +139,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:id="@+id/schRouteSel"
-            android:layout_weight="0.4"
+            android:layout_weight="0.25"
             android:gravity="center_vertical"
-            android:background="@android:drawable/btn_dropdown"
+            android:background="@android:drawable/arrow_down_float"
             android:spinnerMode="dropdown"
             android:textAlignment="center" />
     </LinearLayout>
@@ -152,25 +152,13 @@
         android:layout_margin="10dp"
         android:layout_gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="5:50 PM"
-            android:id="@+id/textView"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentStart="true"
-            android:typeface="sans"
-            android:textAlignment="center"
-            android:gravity="center_vertical" />
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout">
 
             <TextView
                 android:layout_width="0dp"
@@ -183,7 +171,8 @@
                 android:textAlignment="center"
                 android:gravity="center_vertical"
                 android:textColor="#ff0000"
-                android:layout_weight="0.1" />
+                android:layout_weight="0.1"
+                android:background="#59ff00" />
 
             <TextView
                 android:layout_width="0dp"
@@ -194,8 +183,54 @@
                 android:textAlignment="center"
                 android:typeface="sans"
                 android:layout_weight="0.9"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:background="#FF59FF00" />
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/schTimeList"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/linearLayout"
+            android:background="#ffee00"
+            android:textAlignment="center"
+            android:layout_below="@+id/linearLayout2" >
+
+        </ScrollView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Taunton Rd &amp; Simcoe St"
+                android:id="@+id/schTextFrom"
+                android:layout_weight="0.5"
+                android:typeface="sans"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="King Rd &amp; Simcoe St"
+                android:id="@+id/schTextTo"
+                android:layout_weight="0.5"
+                android:typeface="sans"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textSize="12dp" />
+        </LinearLayout>
+
     </RelativeLayout>
 
 </LinearLayout>

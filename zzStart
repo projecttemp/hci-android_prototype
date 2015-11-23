@@ -1,0 +1,4 @@
+eval $(ssh-agent)
+ssh-add ~/.ssh/SSHKey1
+git pull hci-prototype master
+git status
