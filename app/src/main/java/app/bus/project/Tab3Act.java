@@ -10,30 +10,31 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Tab3Act  extends Activity
 {
-    private String[] compList;
-    private String[] routeList;
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab3);
 
-        compList = new String[] {"DRT", "YRT", "TTC", "GO"};
-        routeList = new String[] {"401", "402", "403", "404", "405", "406", "407", "408", "409"};
+		EditText from = (EditText)findViewById(R.id.schFromEnter);
+        from.setText(Front.current);
+
+        EditText to = (EditText)findViewById(R.id.schToEnter);
+        to.setText(Front.destination);
 
         Spinner spinCompany = (Spinner) findViewById(R.id.schCompanySel);
-        ArrayAdapter<String> adpCompany = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, compList);
+        ArrayAdapter<String> adpCompany = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Front.routeCom);
         spinCompany.setAdapter(adpCompany);
         spinCompany.setSelection(0);
 
         Spinner spinRoute = (Spinner) findViewById(R.id.schRouteSel);
-        ArrayAdapter<String> adpRoute = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, routeList);
+        ArrayAdapter<String> adpRoute = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Front.routeNum);
         spinRoute.setAdapter(adpRoute);
         spinRoute.setSelection(0);
 
