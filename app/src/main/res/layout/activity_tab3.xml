@@ -124,13 +124,45 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5">
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"></LinearLayout>
+
             <Button
-                android:layout_width="30dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/schBtnFav"
                 android:textAlignment="center"
                 android:typeface="sans"
-                android:background="@android:drawable/btn_star_big_on" />
+                android:background="@android:drawable/btn_star_big_on"
+                android:layout_weight="0.3" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="T"
+                android:id="@+id/schBtnTime"
+                android:layout_weight="0.35"
+                android:typeface="sans"
+                android:textAlignment="center"
+                android:textSize="12dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15">
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <TextView

@@ -2,6 +2,8 @@ package app.bus.project;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -9,11 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
+
+import java.util.Calendar;
 
 public class Tab3Act extends Activity
 {
@@ -46,6 +52,29 @@ public class Tab3Act extends Activity
             }
         };
         favButton.setOnClickListener(favEve);
+
+        Button timeButton = (Button) findViewById(R.id.schBtnTime);
+        View.OnClickListener timeEve = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePicker;
+                datePicker = new DatePickerDialog(Tab3Act.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int selectedyear, int selectedmonth, int selectedday) {
+                        selectedmonth++;
+                        System.out.println("Date: " + selectedday + ", " + selectedmonth + "/" + selectedyear);
+                    }
+                }, year, month, day);
+                datePicker.setTitle("Select the Date");
+                datePicker.show();
+            }
+        };
+        timeButton.setOnClickListener(timeEve);
 
         ScrollView timeListScroll = (ScrollView) findViewById(R.id.schTimeList);
         ScrollView.LayoutParams scrollParam = new ScrollView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
