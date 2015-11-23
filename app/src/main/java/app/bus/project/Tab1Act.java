@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -13,6 +14,9 @@ import android.widget.Toast;
 
 public class Tab1Act extends Activity
 {
+    private static LinearLayout routeB;
+    private static View.OnClickListener eve;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -43,8 +47,8 @@ public class Tab1Act extends Activity
             }
         });
 
-        LinearLayout routeB = (LinearLayout)findViewById(R.id.routeB);
-        routeB.setOnClickListener(new View.OnClickListener() {
+        routeB = (LinearLayout)findViewById(R.id.routeB);
+        eve = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView stop = (TextView) findViewById(R.id.busStops2);
@@ -62,7 +66,29 @@ public class Tab1Act extends Activity
 
                 Tab2Act.updated = true;
                 Tab3Act.updated = true;
+
+                Front.switchTab(2);
             }
-        });
+        };
+        disableB();
+
+        Button favRemove = (Button) findViewById(R.id.favBtnRemove2);
+        View.OnClickListener btnEve = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                disableB();
+            }
+        };
+        favRemove.setOnClickListener(btnEve);
+    }
+
+    public static void disableB() {
+        routeB.setVisibility(View.INVISIBLE);
+        routeB.setOnClickListener(null);
+    }
+
+    public static void enableB() {
+        routeB.setVisibility(View.VISIBLE);
+        routeB.setOnClickListener(eve);
     }
 }

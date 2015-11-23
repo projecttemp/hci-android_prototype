@@ -27,10 +27,10 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="401S"
                 android:id="@+id/busRouteNum1"
-                android:layout_weight="0.5"
                 android:textAlignment="center"
                 android:typeface="sans"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:layout_weight="0.5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -51,27 +51,62 @@
             android:layout_weight="0.6"
             android:background="#e6ff00">
 
-            <TextView
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Taunton Rd. -> King St."
-                android:id="@+id/busStops1"
-                android:gravity="center_vertical"
-                android:textAlignment="center"
-                android:typeface="sans"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5">
 
-            <TextView
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Taunton Rd. -> King St."
+                    android:id="@+id/busStops1"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:typeface="sans"
+                    android:layout_weight="1.1"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="5/65"
+                    android:id="@+id/busRouteCap1"
+                    android:textAlignment="center"
+                    android:typeface="sans"
+                    android:gravity="center_vertical"
+                    android:layout_weight="0.2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="4:30 PM -> 5:30 PM"
-                android:id="@+id/busTimes1"
-                android:gravity="center_vertical"
-                android:textAlignment="center"
-                android:typeface="sans"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="4:30 PM -> 4:45 PM"
+                    android:id="@+id/busTimes1"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:typeface="sans"
+                    android:layout_weight="1.1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/favBtnRemove1"
+                    android:layout_weight="0.2"
+                    android:background="@android:drawable/btn_star_big_off"
+                    android:textAlignment="center"
+                    android:typeface="sans" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -100,10 +135,10 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="401S"
                 android:id="@+id/busRouteNum2"
-                android:layout_weight="0.5"
                 android:textAlignment="center"
                 android:typeface="sans"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:layout_weight="0.5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -124,27 +159,62 @@
             android:layout_weight="0.6"
             android:background="#e6ff00">
 
-            <TextView
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Taunton Rd. -> Simcoe St."
-                android:id="@+id/busStops2"
-                android:gravity="center_vertical"
-                android:textAlignment="center"
-                android:typeface="sans"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5">
 
-            <TextView
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Taunton Rd. -> Kingston Rd."
+                    android:id="@+id/busStops2"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:typeface="sans"
+                    android:layout_weight="1.1"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="5/65"
+                    android:id="@+id/busRouteCap2"
+                    android:textAlignment="center"
+                    android:typeface="sans"
+                    android:gravity="center_vertical"
+                    android:layout_weight="0.2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="4:30 PM -> 5:30 PM"
-                android:id="@+id/busTimes2"
-                android:gravity="center_vertical"
-                android:textAlignment="center"
-                android:typeface="sans"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="4:30 PM -> 5:10 PM"
+                    android:id="@+id/busTimes2"
+                    android:gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:typeface="sans"
+                    android:layout_weight="1.1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/favBtnRemove2"
+                    android:layout_weight="0.2"
+                    android:background="@android:drawable/btn_star_big_off"
+                    android:textAlignment="center"
+                    android:typeface="sans" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

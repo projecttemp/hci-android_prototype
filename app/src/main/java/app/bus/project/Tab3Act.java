@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.EditText;
@@ -35,6 +36,16 @@ public class Tab3Act extends Activity
         ArrayAdapter<String> adpRoute = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Front.routeNum);
         spinRoute.setAdapter(adpRoute);
         spinRoute.setSelection(0);
+
+        Button favButton = (Button) findViewById(R.id.schBtnFav);
+        View.OnClickListener favEve = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Tab1Act.enableB();
+                Front.switchTab(0);
+            }
+        };
+        favButton.setOnClickListener(favEve);
 
         ScrollView timeListScroll = (ScrollView) findViewById(R.id.schTimeList);
         ScrollView.LayoutParams scrollParam = new ScrollView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);

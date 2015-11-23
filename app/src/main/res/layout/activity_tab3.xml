@@ -122,7 +122,16 @@
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"></LinearLayout>
+            android:layout_weight="0.5">
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:id="@+id/schBtnFav"
+                android:textAlignment="center"
+                android:typeface="sans"
+                android:background="@android:drawable/btn_star_big_on" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="0dp"
