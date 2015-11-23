@@ -29,10 +29,10 @@ public class Tab1Act  extends Activity
                 Front.destination = address[1];
 
                 TextView rn = (TextView)findViewById(R.id.busRouteNum1);
-                Front.routeNum = rn.getText().toString();
+                Front.routeNum[0] = rn.getText().toString();
 
                 TextView com = (TextView)findViewById(R.id.busRouteCom1);
-                Front.routeCom = com.getText().toString();
+                Front.routeCom[0] = com.getText().toString();
             }
         });
 
@@ -48,10 +48,10 @@ public class Tab1Act  extends Activity
                 Front.destination = address[1];
 
                 TextView rn = (TextView)findViewById(R.id.busRouteNum2);
-                Front.routeNum = rn.getText().toString();
+                Front.routeNum[0] = rn.getText().toString();
 
                 TextView com = (TextView)findViewById(R.id.busRouteCom2);
-                Front.routeCom = com.getText().toString();
+                Front.routeCom[0] = com.getText().toString();
             }
         });
     }

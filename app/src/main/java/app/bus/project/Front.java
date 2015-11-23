@@ -8,13 +8,17 @@ import android.widget.TabHost;
 
 
 public class Front extends ActivityGroup {
-    public static String current, destination, routeNum, routeCom;
+    public static String current, destination;
+    public static String[] routeNum, routeCom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front);
+
+        routeNum = new String[1];
+        routeCom = new String[1];
 
         TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
         //tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
