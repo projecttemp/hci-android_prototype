@@ -1,15 +1,17 @@
 package app.bus.project;
 
 import android.app.Activity;
+import android.app.ActivityGroup;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab1Act  extends Activity
+public class Tab1Act extends Activity
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -21,18 +23,23 @@ public class Tab1Act  extends Activity
         routeA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView stop = (TextView)findViewById(R.id.busStops1);
+                TextView stop = (TextView) findViewById(R.id.busStops1);
                 String ro = stop.getText().toString();
                 String[] address = ro.split(" -> ");
 
                 Front.current = address[0];
                 Front.destination = address[1];
 
-                TextView rn = (TextView)findViewById(R.id.busRouteNum1);
+                TextView rn = (TextView) findViewById(R.id.busRouteNum1);
                 Front.routeNum[0] = rn.getText().toString();
 
-                TextView com = (TextView)findViewById(R.id.busRouteCom1);
+                TextView com = (TextView) findViewById(R.id.busRouteCom1);
                 Front.routeCom[0] = com.getText().toString();
+
+                Tab2Act.updated = true;
+                Tab3Act.updated = true;
+
+                Front.switchTab(2);
             }
         });
 
@@ -40,18 +47,21 @@ public class Tab1Act  extends Activity
         routeB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView stop = (TextView)findViewById(R.id.busStops2);
+                TextView stop = (TextView) findViewById(R.id.busStops2);
                 String ro = stop.getText().toString();
                 String[] address = ro.split(" -> ");
 
                 Front.current = address[0];
                 Front.destination = address[1];
 
-                TextView rn = (TextView)findViewById(R.id.busRouteNum2);
+                TextView rn = (TextView) findViewById(R.id.busRouteNum2);
                 Front.routeNum[0] = rn.getText().toString();
 
-                TextView com = (TextView)findViewById(R.id.busRouteCom2);
+                TextView com = (TextView) findViewById(R.id.busRouteCom2);
                 Front.routeCom[0] = com.getText().toString();
+
+                Tab2Act.updated = true;
+                Tab3Act.updated = true;
             }
         });
     }

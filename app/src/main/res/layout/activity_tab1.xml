@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Taunton Rd. -> Simcoe St."
+                android:text="Taunton Rd. -> King St."
                 android:id="@+id/busStops1"
                 android:gravity="center_vertical"
                 android:textAlignment="center"

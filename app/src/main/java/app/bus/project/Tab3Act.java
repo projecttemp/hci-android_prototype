@@ -14,19 +14,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class Tab3Act  extends Activity
+public class Tab3Act extends Activity
 {
+    public static boolean updated;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab3);
 
-		EditText from = (EditText)findViewById(R.id.schFromEnter);
-        from.setText(Front.current);
-
-        EditText to = (EditText)findViewById(R.id.schToEnter);
-        to.setText(Front.destination);
+        this.onResume();
 
         Spinner spinCompany = (Spinner) findViewById(R.id.schCompanySel);
         ArrayAdapter<String> adpCompany = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Front.routeCom);
@@ -119,5 +117,20 @@ public class Tab3Act  extends Activity
         lay.addView(ri);
 
         return lay;
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        if(this.updated) {
+            this.updated = false;
+            EditText from = (EditText)findViewById(R.id.schFromEnter);
+            from.setText(Front.current);
+
+            EditText to = (EditText)findViewById(R.id.schToEnter);
+            to.setText(Front.destination);
+        }
     }
 }

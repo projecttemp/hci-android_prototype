@@ -70,17 +70,17 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:id="@+id/mapCompanySel"
-            android:background="@android:drawable/btn_dropdown"
+            android:background="@android:drawable/arrow_down_float"
             android:spinnerMode="dropdown"
             android:textAlignment="center"
             android:gravity="center_vertical"
-            android:layout_weight="0.4" />
+            android:layout_weight="0.25" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"></LinearLayout>
+            android:layout_weight="0.5"></LinearLayout>
 
         <TextView
             android:layout_width="0dp"
@@ -97,9 +97,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:id="@+id/mapRouteSel"
-            android:layout_weight="0.4"
+            android:layout_weight="0.25"
             android:gravity="center_vertical"
-            android:background="@android:drawable/btn_dropdown"
+            android:background="@android:drawable/arrow_down_float"
             android:spinnerMode="dropdown"
             android:textAlignment="center" />
     </LinearLayout>
