@@ -9,8 +9,8 @@ import android.widget.TabHost;
 
 
 public class Front extends ActivityGroup {
-    public static String current, destination;
-    public static String[] routeNum, routeCom;
+    public static String current, destination, startInt, endInt, note;
+    public static String[] routeNum, routeCom, startTime, endTime;
 
     private static TabHost tabHost;
 

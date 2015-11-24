@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Project</string>
+
+    <string name="startInt">Taunton Rd. &amp; Simcoe St.</string>
+    <string name="endInt_A">King St. &amp; Simcoe St.</string>
+    <string name="endInt_B">Kingston Rd. &amp; Brock Rd.</string>
+
+    <string name="notifA">Accident on Simcoe St. and Rossland Rd. Intersection closed.</string>
+    <string name="notifB">Accident on Kingston Rd. and Salem Rd. Intersection closed.</string>
 </resources>

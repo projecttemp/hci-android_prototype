@@ -33,12 +33,12 @@ public class Tab1Act extends Activity
 
                 Front.current = address[0];
                 Front.destination = address[1];
+                Front.startTime = getResources().getStringArray(R.array.A_start);
+                Front.endTime = getResources().getStringArray(R.array.A_end);
 
-                TextView rn = (TextView) findViewById(R.id.busRouteNum1);
-                Front.routeNum[0] = rn.getText().toString();
-
-                TextView com = (TextView) findViewById(R.id.busRouteCom1);
-                Front.routeCom[0] = com.getText().toString();
+                Front.startInt = getResources().getString(R.string.startInt);
+                Front.endInt = getResources().getString(R.string.endInt_A);
+                Front.note = getResources().getString(R.string.notifA);
 
                 Tab2Act.updated = true;
                 Tab3Act.updated = true;
@@ -57,12 +57,12 @@ public class Tab1Act extends Activity
 
                 Front.current = address[0];
                 Front.destination = address[1];
+                Front.startTime = getResources().getStringArray(R.array.B_start);
+                Front.endTime = getResources().getStringArray(R.array.B_end);
 
-                TextView rn = (TextView) findViewById(R.id.busRouteNum2);
-                Front.routeNum[0] = rn.getText().toString();
-
-                TextView com = (TextView) findViewById(R.id.busRouteCom2);
-                Front.routeCom[0] = com.getText().toString();
+                Front.startInt = getResources().getString(R.string.startInt);
+                Front.endInt = getResources().getString(R.string.endInt_B);
+                Front.note = getResources().getString(R.string.notifB);
 
                 Tab2Act.updated = true;
                 Tab3Act.updated = true;

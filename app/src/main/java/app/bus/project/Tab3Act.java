@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -24,6 +25,8 @@ import java.util.Calendar;
 public class Tab3Act extends Activity
 {
     public static boolean updated;
+    private LinearLayout timeList;
+    private LinearLayout.LayoutParams listParam;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -78,59 +81,10 @@ public class Tab3Act extends Activity
 
         ScrollView timeListScroll = (ScrollView) findViewById(R.id.schTimeList);
         ScrollView.LayoutParams scrollParam = new ScrollView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        LinearLayout timeList = new LinearLayout(this);
+        timeList = new LinearLayout(this);
         timeList.setLayoutParams(scrollParam);
         timeList.setOrientation(LinearLayout.VERTICAL);
-        LinearLayout.LayoutParams listParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1.0f);
-
-        timeList.addView(getView("8:00 AM", "8:15 AM", listParam));
-        timeList.addView(getView("8:05 AM", "8:20 AM", listParam));
-        timeList.addView(getView("8:10 AM", "8:25 AM", listParam));
-        timeList.addView(getView("8:15 AM", "8:30 AM", listParam));
-        timeList.addView(getView("8:20 AM", "8:35 AM", listParam));
-        timeList.addView(getView("8:25 AM", "8:40 AM", listParam));
-        timeList.addView(getView("8:30 AM", "8:45 AM", listParam));
-        timeList.addView(getView("8:35 AM", "8:50 AM", listParam));
-        timeList.addView(getView("8:40 AM", "8:55 AM", listParam));
-        timeList.addView(getView("8:45 AM", "9:00 AM", listParam));
-        timeList.addView(getView("8:50 AM", "9:05 AM", listParam));
-        timeList.addView(getView("8:55 AM", "9:10 AM", listParam));
-
-        timeList.addView(getView("9:00 AM", "9:15 AM", listParam));
-        timeList.addView(getView("9:10 AM", "9:25 AM", listParam));
-        timeList.addView(getView("9:20 AM", "9:35 AM", listParam));
-        timeList.addView(getView("9:30 AM", "9:45 AM", listParam));
-        timeList.addView(getView("9:40 AM", "9:55 AM", listParam));
-        timeList.addView(getView("9:50 AM", "10:05 AM", listParam));
-
-        timeList.addView(getView("10:00 AM", "10:15 AM", listParam));
-        timeList.addView(getView("10:20 AM", "10:35 AM", listParam));
-        timeList.addView(getView("10:40 AM", "10:55 AM", listParam));
-
-        timeList.addView(getView("11:00 AM", "11:15 AM", listParam));
-        timeList.addView(getView("11:20 AM", "11:35 AM", listParam));
-        timeList.addView(getView("11:40 AM", "11:55 AM", listParam));
-
-        timeList.addView(getView("12:00 PM", "12:15 PM", listParam));
-
-        timeList.addView(getView("Frequent", "Service", listParam));
-
-        timeList.addView(getView("2:30 PM", "2:45 PM", listParam));
-
-        timeList.addView(getView("3:00 PM", "3:15 PM", listParam));
-        timeList.addView(getView("3:30 PM", "3:45 PM", listParam));
-
-        timeList.addView(getView("4:00 PM", "4:15 PM", listParam));
-        timeList.addView(getView("4:30 PM", "4:45 PM", listParam));
-
-        timeList.addView(getView("5:00 PM", "5:15 PM", listParam));
-        timeList.addView(getView("5:10 PM", "5:25 PM", listParam));
-        timeList.addView(getView("5:20 PM", "5:35 PM", listParam));
-        timeList.addView(getView("5:30 PM", "5:45 PM", listParam));
-        timeList.addView(getView("5:40 PM", "5:55 PM", listParam));
-        timeList.addView(getView("5:50 PM", "6:05 PM", listParam));
-
-        timeList.addView(getView("6:00 PM", "6:15 PM", listParam));
+        listParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1.0f);
 
         timeListScroll.addView(timeList);
     }
@@ -166,11 +120,25 @@ public class Tab3Act extends Activity
 
         if(this.updated) {
             this.updated = false;
+            timeList.removeAllViews();
             EditText from = (EditText)findViewById(R.id.schFromEnter);
             from.setText(Front.current);
 
             EditText to = (EditText)findViewById(R.id.schToEnter);
             to.setText(Front.destination);
+
+            for(int t = 0; t < Front.startTime.length; t++){
+                timeList.addView(getView(Front.startTime[t], Front.endTime[t], listParam));
+            }
+
+            TextView intF = (TextView)findViewById(R.id.schTextFrom);
+            intF.setText(Front.startInt);
+
+            TextView intT = (TextView)findViewById(R.id.schTextTo);
+            intT.setText(Front.endInt);
+
+            TextView alert = (TextView)findViewById(R.id.textView3);
+            alert.setText(Front.note);
         }
     }
 }
