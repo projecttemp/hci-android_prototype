@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="15dp"
-    tools:context=".Tab3Act">
+    tools:context=".Schedule">
 
     <LinearLayout
         android:orientation="horizontal"
