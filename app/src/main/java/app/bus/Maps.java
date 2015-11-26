@@ -225,19 +225,16 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback, Locati
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng CN = new LatLng(43.6426, -79.3871);
         String query = "UOIT";
         Address address = geocodeLookup(query);
         LatLng uoit = new LatLng(address.getLatitude(), address.getLongitude());
 
         mMap.addMarker(new MarkerOptions().position(uoit).title("University of Ontario Institute of Technology"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(uoit));
-        //mMap.animateCamera(CameraUpdateFactory.newLatLng(position));
 
         mMap.setTrafficEnabled(true);
         mMap.setBuildingsEnabled(true);
-        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setZoomGesturesEnabled(true);
     }

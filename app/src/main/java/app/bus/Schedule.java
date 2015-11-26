@@ -24,6 +24,7 @@ import java.util.Calendar;
 public class Schedule extends Activity
 {
     public static boolean updated;
+    public static boolean ready = false;
     private LinearLayout timeList;
     private LinearLayout.LayoutParams listParam;
 
@@ -86,6 +87,7 @@ public class Schedule extends Activity
         listParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1.0f);
 
         timeListScroll.addView(timeList);
+        ready = true;
     }
 
     private LinearLayout getView(String left, String right, LinearLayout.LayoutParams param)

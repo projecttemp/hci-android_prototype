@@ -44,7 +44,9 @@ public class Favourites extends Activity {
                 Maps.updated = true;
                 Schedule.updated = true;
 
-                MainActivity.switchTab(2);
+                if (Schedule.ready) {
+                    MainActivity.switchTab(2);
+                }
             }
         });
 
@@ -68,7 +70,9 @@ public class Favourites extends Activity {
                 Maps.updated = true;
                 Schedule.updated = true;
 
-                MainActivity.switchTab(2);
+                if (Schedule.ready) {
+                    MainActivity.switchTab(2);
+                }
             }
         };
         disableB();
