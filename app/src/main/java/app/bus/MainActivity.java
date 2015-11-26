@@ -14,6 +14,7 @@ public class MainActivity extends ActivityGroup {
     public static String[] routeNum, routeCom, startTime, endTime;
 
     public static TabHost tabHost;
+    public static Maps context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

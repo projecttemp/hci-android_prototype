@@ -4,6 +4,8 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -15,15 +17,20 @@ import android.provider.Settings;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
@@ -33,13 +40,16 @@ import java.util.Locale;
 public class Maps extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
-    private double latitude, longitude;
+    private Marker stops;
+    private Marker bus;
     public static boolean updated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        MainActivity.context = this;
 
         // Below is Jason's code before the next comments
         this.onResume();
@@ -229,7 +239,48 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback, Locati
         Address address = geocodeLookup(query);
         LatLng uoit = new LatLng(address.getLatitude(), address.getLongitude());
 
-        mMap.addMarker(new MarkerOptions().position(uoit).title("University of Ontario Institute of Technology"));
+        stops = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(43.9433431, -78.895061))
+                .title("Stop# 314159")
+                .snippet("Founders Dr & Commencement Cir\nFacilities: Heating, Shelter")
+        );
+
+        bus = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(43.94454584, -78.89120489))
+                .title("Bus# 900145")
+                .snippet("Here at: 9:10 AM\nDestination at: 9:25 AM\nSeats: 5/65")
+        );
+
+        mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+
+            @Override
+            public View getInfoWindow(Marker arg0) {
+                return null;
+            }
+
+            @Override
+            public View getInfoContents(Marker marker) {
+
+                LinearLayout info = new LinearLayout(MainActivity.context);
+                info.setOrientation(LinearLayout.VERTICAL);
+
+                TextView title = new TextView(MainActivity.context);
+                title.setTextColor(Color.BLACK);
+                title.setGravity(Gravity.CENTER);
+                title.setTypeface(null, Typeface.BOLD);
+                title.setText(marker.getTitle());
+
+                TextView snippet = new TextView(MainActivity.context);
+                snippet.setTextColor(Color.GRAY);
+                snippet.setText(marker.getSnippet());
+
+                info.addView(title);
+                info.addView(snippet);
+
+                return info;
+            }
+        });
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(uoit));
 
         mMap.setTrafficEnabled(true);
